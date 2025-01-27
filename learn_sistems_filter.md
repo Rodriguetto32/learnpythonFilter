@@ -6,29 +6,15 @@ from typing import Tuple
 import librosa
 
 #télécoms Paris. eh bien, quels sont les problèmes dans les systèmes ? 
-#cela peut être fait dans les sciences technologiques et la physique 
-#moderne en Python. Je sais que vous avez des problèmes avec le sujet.
-#Voici la solution
-#mise à jour tout au long de la course
+
 # Définir le filtre FIR
 # Defining the FIR filter
-num = 41
-cut = 0.1
-fs = 1
 B = firwin(num, cut, fs=fs)
 
 # Analyser la réponse en fréquence du filtre FIR
 # Analyzing the frequency response of the FIR filter
 W, H = freqz(B, worN=512, fs=fs)
 plt.plot(W, np.abs(H))
-plt.title('Réponse en fréquence du filtre FIR')
-plt.title('Frequency response of the FIR filter')
-plt.xlabel('Fréquence')
-plt.xlabel('Frequency')
-plt.ylabel('Magnitude')
-plt.ylabel('Magnitude')
-plt.grid()
-plt.show()
 
 # Appliquer le filtre FIR aux signaux
 # Applying the FIR filter to signals
