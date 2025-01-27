@@ -9,7 +9,7 @@ import librosa
 #cela peut être fait dans les sciences technologiques et la physique 
 #moderne en Python. Je sais que vous avez des problèmes avec le sujet.
 #Voici la solution
-
+#mise à jour tout au long de la course
 # Définir le filtre FIR
 # Defining the FIR filter
 num = 41
@@ -58,18 +58,10 @@ y2 = lfilter(B, a, x2)
 audio_mono, fs1 = librosa.load('./signals/file_mono.wav', sr=None, mono=True)
 audio_stereo, fs2 = librosa.load('./signals/file_stereo.wav', sr=None, mono=False)
 
-# Déterminer le nombre de canaux
-# Determining the number of channels
-    if x.ndim == 2:
-        num_channel = 2
-    else:
-        num_channel = 1
-    
-
 # Vérification des fichiers WAV
 # Checking WAV files
 
-    audio, samplerate = librosa.load(wav_filename, sr=None, mono=True)
+    audio, ratesample = librosa.load(wav_filename, sr=None, mono=True)
     try:
         if sr != ratesample:
             return False
@@ -82,6 +74,13 @@ audio_stereo, fs2 = librosa.load('./signals/file_stereo.wav', sr=None, mono=Fals
         return True
     except Exception:
         return False
+# Déterminer le nombre de canaux
+# Determining the number of channels
+    if x.ndim == 2:
+        num_channel = 2
+    else:
+        num_channel = 1
+    
 
 # Effet de fondu en ouverture
 # Fade In effect
